@@ -24,13 +24,19 @@ spotifyApi
   );
 
 // Our routes go here:
-app.get("/", (req, res) => {
-  spotifyApi
-    .searchArtists("madonna")
-    .then(data => console.log(data.body.artists.items[0]))
-    .catch((err) => console.log(err));
 
-  res.send("route created");
+app.get('/', (req,res)=>{
+  res.render("index")
+})
+
+app.get("/artist-search", (req, res) => {
+  spotifyApi
+    .searchArtists(req.query.artistName)
+    .then(data => {
+      console.log("The received data from the API: ", data.body)
+      let results = data.body.artists.items
+      res.render("artist-search-results",results)})
+    .catch((err) => console.log(err));
 });
 
 app.listen(3000, () =>
