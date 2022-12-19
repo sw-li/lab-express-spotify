@@ -1,6 +1,15 @@
-<head><title>Search result</title></head>
-<h1>Search</h1>
-
+<head>
+    <title>Search result</title>
+</head>
+<div class="searchResults">
 {{#each results}}
-    <img src="{{images.url}}" alt="result img">
+<div class="artist">
+    <div class="artistImgContainer">
+        <img class="artistImg" src="{{images.1.url}} " alt="">
+    </div>
+    <h2 class="artistName"> {{name}} </h2>
+    <button href="/">View Albums</button>
+</div>
 {{/each}}
+
+</div>

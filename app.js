@@ -32,10 +32,10 @@ app.get('/', (req,res)=>{
 app.get("/artist-search", (req, res) => {
   spotifyApi
     .searchArtists(req.query.artistName)
-    .then(data => {
-      console.log("The received data from the API: ", data.body)
-      let results = data.body.artists.items
-      res.render("artist-search-results",results)})
+    .then(data => data.body.artists.items)
+    .then(results => {
+      res.render("artist-search-results", {results})
+    })
     .catch((err) => console.log(err));
 });
 
