@@ -64,7 +64,17 @@ button{
     margin: 10px 50px;
 }
 
-.albums,
+.albums{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap:30px;
+    margin: 10px 50px; 
+}
+
+
+.album,
 .artist{
     background-color: rgb(64, 61, 61);
     height: 380px;
@@ -73,6 +83,7 @@ button{
     flex-direction: column;
     align-items: center;
 }
+
 
 .albumName,
 .artistName{
