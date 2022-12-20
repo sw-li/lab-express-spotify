@@ -1,0 +1,17 @@
+<head>
+    <title>Albums for: {{results.0.artists.0.name}} </title>
+</head>
+
+<h1>Albums for: {{results.0.artists.0.name}} </h1>
+<div class="searchResults">
+{{#each results}}
+<div class="album">
+    <div class="albumImgContainer">
+        <img class="albumImg" src="{{images.1.url}} " alt="">
+    </div>
+    <h2 class="albumName"> {{name}} </h2>
+    <input class="button" type="button" onclick="location.href='www.google.com'" value="View Tracks">
+</div>
+{{/each}}
+
+</div>
