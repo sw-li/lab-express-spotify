@@ -2,14 +2,14 @@
     <title>Search result</title>
 </head>
 <div class="searchResults">
-{{#each results}}
-<div class="artist">
-    <div class="artistImgContainer">
-        <img class="artistImg" src="{{images.1.url}} " alt="">
+    {{#each results}}
+    <div class="artist">
+        <div class="artistImgContainer">
+            <img class="artistImg" src="{{images.1.url}} " alt="">
+        </div>
+        <h2 class="artistName"> {{name}} </h2>
+        <input class="button" type="button" onclick="location.href='/albums/{{id}}'" value="View Albums">
     </div>
-    <h2 class="artistName"> {{name}} </h2>
-    <input class="button" type="button" onclick="location.href='/albums/{{id}}'" value="View Albums">
-</div>
-{{/each}}
+    {{/each}}
 
 </div>
