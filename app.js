@@ -57,7 +57,7 @@ app.get("/albums/album/:albumId", (req, res)=>{
     .then(data => data.body.items)
     .then(results => {
       console.log(results)
-      res.render('album', {results})
+      res.render('album', {results, layout:false})
     })
     .catch((err) => console.log(err))
 })
